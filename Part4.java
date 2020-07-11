@@ -10,18 +10,19 @@ public class Part4 {
       URLResource ur = new URLResource(url);
       for (String s : ur.words()) {
          // searching youtube URL
-        
          String str = s.toLowerCase();
          int pos=str.indexOf("youtube");
          if(pos!=-1)
          {
           String quote = "\"";
           int firstIndex = s.lastIndexOf(quote, pos);
-          if (firstIndex != -1) {
+          int secondIndex = s.indexOf(quote,pos+1);
+          System.out.println(s.subSequence(firstIndex, secondIndex));
+         /* if (firstIndex != -1) {
              String found1 = s.substring(firstIndex + 1);
              int secondIndex = found1.indexOf("\"");
              System.out.println(found1.substring(0, secondIndex));
-          }
+          }*/
          }
       }
    }
